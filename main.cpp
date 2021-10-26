@@ -15,13 +15,13 @@ int main(int argc, char* argv[]) {
 	Producto* producto;
 	NodoCajera* nodocajera;
 	NodoProducto* nodoproducto;
-	NodoCarrito* nodoCarrito;
+	NodoCarrito* nodocarrito;
 	ColaCajera* cola = new ColaCajera();
 	PilaCarrito* pila = new PilaCarrito();
 	ListaSimpleProductos* lista = new ListaSimpleProductos();
 	string nombre;
 	int id, opcSwitch = 0, opcDow = 0;
-
+	double producto1, producto2;
 	do {
 		system("color F0");
 		system("cls");
@@ -29,7 +29,7 @@ int main(int argc, char* argv[]) {
 			<< "=========================================" << endl
 			<< "1.Registrar una cajera" << endl
 			<< "2.Imprimir una lista de cajeras" << endl
-			<< "3. Mostrar una Orden" << endl
+			<< "3. Registrar un carrito" << endl
 			<< "0. Salir" << endl
 			<< "=========================================" << endl
 			<< "Elija?: ";
@@ -55,7 +55,13 @@ int main(int argc, char* argv[]) {
 			cola->imprimir();
 			break;
 		case 3:
-
+			nodocarrito = new NodoCarrito();
+			cout << "======================== Registro de carritos========================" << endl
+				<< "\nDigite el id del carrito a registrar" << endl;
+			cin >> id;
+			nodocarrito->setIdCarrito(id);
+			pila->apilar(nodocarrito);
+			pila->imprimirTodosCarritos();
 			break;
 		case 4:
 			break;

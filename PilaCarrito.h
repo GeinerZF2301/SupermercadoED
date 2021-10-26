@@ -54,7 +54,7 @@ public:
 			cout << "Cabeza->";
 			aux = cabeza;
 			while (aux != NULL) {
-				cout << aux->getSiguiente()->getIdCarrito() << aux->getMonto() << "->";
+				cout << aux->getSiguiente()->getIdCarrito() <<"->";
 				aux = aux->getSiguiente();
 			}
 			cout << "NULL" << endl;
@@ -81,7 +81,20 @@ public:
 			}
 		}
 	}
-
+	bool buscarCarrito(int id) {
+		NodoCarrito* aux;
+		if (!esVacia()) {
+			aux = getCabeza();
+			while (aux != NULL && aux->getSiguiente()->getIdCarrito() != id) {
+				aux = aux->getSiguiente();
+			}
+			if (aux != NULL) {		//Si existe el carrito en la pila
+				cout << "Carrito Encontrado!: " << endl;
+				return true;
+			}
+		}
+		return false;
+	}
 };
 #endif
 
