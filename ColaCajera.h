@@ -37,6 +37,7 @@ public:
 		}
 		contador++;
 	}
+	
 	void quitar() {
 		NodoCajera* aux;
 		if (!esVacia()) {
