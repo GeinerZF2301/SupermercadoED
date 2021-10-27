@@ -6,6 +6,7 @@
 using namespace std;
 #include"NodoCarrito.h"
 #include"Producto.h"
+#include"NodoProducto.h"
 class PilaCarrito {
 private:
 	int contador;
@@ -54,7 +55,7 @@ public:
 			cout << "Cabeza->";
 			aux = cabeza;
 			while (aux != NULL) {
-				cout << "Hola";
+				cout << aux->getCarrito()->toString();
 				aux = aux->getSiguiente();
 			}
 			cout << "NULL" << endl;
@@ -63,25 +64,8 @@ public:
 			cout << "La pila de carritos esta vacia" << endl;
 		}
 	}
-	void imprimirProductosCarrito(int idcarrito) {
-		NodoCarrito* aux;
-		Producto* aux1;
-		if (!esVacia()) {
-			cout << "Cabeza->";
-			aux = cabeza;
-			while (aux != NULL) {
-				if (aux->getSiguiente()->getIdCarrito() == idcarrito) {
-					cout << aux->getSiguiente()->getIdCarrito() << "->";
-					cout << aux1->toString();
-				}
-				aux = aux->getSiguiente();
-			}
-			if (aux == NULL) {
-				cout << "El carrito no fue encontrado!" << endl;
-			}
-		}
-	}
-	bool buscarCarrito(int id) {
+	
+	/*bool buscarCarrito(int id) {
 		NodoCarrito* aux;
 		if (!esVacia()) {
 			aux = getCabeza();
@@ -94,7 +78,43 @@ public:
 			}
 		}
 		return false;
+	}*/
+	void imprimirProductosCarrito() {
+		NodoCarrito* aux;
+		Producto* aux1;
+		if (!esVacia()) {
+			cout << "Cabeza->";
+			aux = cabeza;
+			while (aux != NULL) {
+				cout << aux->getSiguiente()<< "->";
+				cout << aux1->toString();
+				
+				aux = aux->getSiguiente();
+			}
+			if (aux == NULL) {
+				cout << "El carrito no fue encontrado!" << endl;
+			}
+		}
 	}
+
+	/*void agregarProductos(int id, NodoProducto* nodo) { //
+		NodoProducto* aux;
+		if (!esVacia()) {
+			aux = getCabeza();
+			while (aux != NULL && aux->getProducto()->getIdProducto() != id) {
+				aux = aux->getSiguiente();
+			}
+			if (aux != NULL) { //Si existe
+				aux->getListaMedicamento()->insertarFinal(nodo);
+				cout << "Medicamento agregado a " << aux->getPaciente()->getNombre() << endl;
+			}
+			else {
+				cout << "Paciente no encontrado " << id << endl;
+			}
+		}
+	}
+	*/
+
 };
 #endif
 

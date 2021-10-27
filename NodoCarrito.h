@@ -4,35 +4,19 @@
 #include<iostream>
 using namespace std;
 #include"Producto.h"
-#include"Cajera.h"
+#include"Carrito.h"
 class NodoCarrito {
 private:
 	NodoCarrito* siguiente;
-	NodoCarrito* carrito;
-	Cajera* cajera;
-	int idCarrito;
-	double montoTotal;
+	Carrito* carrito;
 public:
 	NodoCarrito() {
 		this->siguiente = NULL;
-		this->cajera = NULL;
-		this->idCarrito = 0;
-		this->montoTotal = 0.00;
+		this->carrito = NULL;
 	}
-	NodoCarrito(int idcarrito) {
-		this->idCarrito = idcarrito;
+	NodoCarrito(Carrito* carrito) {
 		this->siguiente = NULL;
-		this->cajera = NULL;
-		this->montoTotal = 0.00;
-	}
-	double getMonto() {
-		return this->montoTotal;
-	}
-	void setIdCarrito(int id) {
-		this->idCarrito = id;
-	}
-	int getIdCarrito() {
-		return this->idCarrito;
+		this->carrito = carrito;
 	}
 	void setSiguiente(NodoCarrito* nodocarrito) {
 		this->siguiente = nodocarrito;
@@ -40,13 +24,9 @@ public:
 	NodoCarrito* getSiguiente() {
 		return this->siguiente;
 	}
-	NodoCarrito* getCarrito(){
+	Carrito *getCarrito() {
 		return this->carrito;
 	}
-	double calcMontoCarrito(double precioProducto1, double precioProducto2) {
-		montoTotal = precioProducto1 + precioProducto2;
-		return montoTotal;
-		cout << "El monto de los producto es de: " << montoTotal;
-	}
+	
 };
 #endif
