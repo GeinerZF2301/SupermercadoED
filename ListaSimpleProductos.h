@@ -4,6 +4,7 @@
 #include<iostream>
 using namespace std;
 #include "NodoProducto.h"
+#include "Producto.h"
 class ListaSimpleProductos {
 private:
 	int contador;
@@ -29,6 +30,10 @@ public:
 		}
 		contador++;
 	}
+	int getContador() {
+		return this->contador;
+	}
+
 	void insertarFinal(NodoProducto* nodoproducto) {
 		NodoProducto* aux;
 		if (esVacia()) {
@@ -76,9 +81,20 @@ public:
 			cout << "NULL" << endl;
 		}
 	}
+	NodoProducto* buscarProducto(string nombreproducto) {
+		NodoProducto* aux, * nodo = NULL;
+		if (!esVacia()) {
+			aux = cabeza;
+			while (aux != NULL) {
+				if (aux->getProducto()->getnombreProducto() == nombreproducto){
+					nodo = aux;
+				}
+					aux = aux->getSiguiente();
+			}
+		}
+		return nodo;
 
-
-
-
+	}
+	
 };
 #endif

@@ -2,8 +2,10 @@
 #define COLACAJERA_H
 #include<sstream>
 #include<iostream>
-#include"NodoCajera.h"
+
 #include"Cajera.h"
+#include "NodoCajera.h"
+
 using namespace std;
 class ColaCajera {
 private:

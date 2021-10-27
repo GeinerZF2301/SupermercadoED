@@ -2,7 +2,7 @@
 #define CARRITO_H
 #include<iostream>
 #include<sstream>
-using namespace std;
+
 class Carrito {
 private:
 	int idCarrito;
