@@ -66,7 +66,14 @@ int main(int argc, char* argv[]) {
 			break;
 		}
 		cout << "\n\t\t\t\t\tDigite 0 para salir" << endl;
+
+		case 6:
+
+			cout << "Hola COMO ESTASSSSSSSSSSS";
 		cin >> opcDow;
+
+		 
+
 	} while (opcDow != 0);
 	return 0;
 };
