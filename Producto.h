@@ -6,14 +6,18 @@ class Producto {
 private:
 	string nombreProducto;
 	double Precio;
+	int id;
 public:
 	Producto() {
-		nombreProducto = " ";
-		Precio = 0.00;
+		this->nombreProducto = " ";
+		this->Precio = 0.00;
+		this->id = 0;
 	}
-	Producto(string nombreproducto, int precio) {
-		nombreProducto = nombreproducto;
-		Precio = precio;
+	Producto(string nombreproducto, int precio, int id) {
+		this->nombreProducto = nombreproducto;
+		this->Precio = precio;
+		this->id = id;
+		
 	}
 	void setNombreProducto(string nombre) {
 		this->nombreProducto = nombre;
@@ -26,6 +30,9 @@ public:
 	}
 	double getPrecio() {
 		return this->Precio;
+	}
+	int getIdProducto() {
+		return this->id;
 	}
 	string toString() {
 		std::stringstream out;

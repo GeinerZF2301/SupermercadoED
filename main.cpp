@@ -16,6 +16,7 @@ int main(int argc, char* argv[]) {
 	NodoCajera* nodocajera;
 	NodoProducto* nodoproducto;
 	NodoCarrito* nodocarrito;
+	Carrito* carrito;
 	ColaCajera* cola = new ColaCajera();
 	PilaCarrito* pila = new PilaCarrito();
 	ListaSimpleProductos* lista = new ListaSimpleProductos();
@@ -30,6 +31,7 @@ int main(int argc, char* argv[]) {
 			<< "1.Registrar una cajera" << endl
 			<< "2.Imprimir una lista de cajeras" << endl
 			<< "3. Registrar un carrito" << endl
+			<< "4. Imprimir una lista de carritos" << endl
 			<< "0. Salir" << endl
 			<< "=========================================" << endl
 			<< "Elija?: ";
@@ -57,14 +59,19 @@ int main(int argc, char* argv[]) {
 				<< "\nDigite el id del carrito a registrar" << endl;
 			cin >> id;
 			nodocarrito = new NodoCarrito();
-			nodocarrito->setIdCarrito(id);
+			carrito = new Carrito();
+			carrito->setIdCarrito(id);
+			nodocarrito = new NodoCarrito(carrito);
 			pila->apilar(nodocarrito);
-			pila->imprimirTodosCarritos();
 			break;
 		
-		case 5:
+		case 4:
+			nodocarrito = new NodoCarrito();
+			nodocarrito->setSiguiente(nodocarrito);
+			pila->imprimirTodosCarritos();
 			break;
 		}
+
 		cout << "\n\t\t\t\t\tDigite 0 para salir" << endl;
 		cin >> opcDow;
 	} while (opcDow != 0);
