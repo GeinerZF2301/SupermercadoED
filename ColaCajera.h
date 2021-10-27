@@ -69,5 +69,22 @@ public:
 		}
 	}
 
+	void agregarCarritoPorCajera(int idCajera, NodoCarrito* nodo) {
+		NodoCajera* aux;
+		if (!esVacia()) {
+			aux = getFrente();
+			while (aux != NULL && aux->getCajera()->getIdCajera() != idCajera) {
+				aux = aux->getSiguiente();
+			}
+			if (aux != NULL) {
+				aux->getPilaCarrito()->apilar(nodo);
+				cout << "Carrito agregado a " << aux->getCajera()->getIdCajera() << endl;
+			}
+			else {
+				cout << " Cajera no encontrado " << idCajera << endl;
+			}
+		}
+	}
+
 };
 #endif
