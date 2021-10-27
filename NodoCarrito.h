@@ -3,43 +3,45 @@
 #include<sstream>
 #include<iostream>
 using namespace std;
-#include"ListaSimpleProductos.h"
+#include"Producto.h"
+#include"Cajera.h"
 class NodoCarrito {
 private:
 	NodoCarrito* siguiente;
-	ListaSimpleProductos* lista;
+	NodoCarrito* carrito;
+	Cajera* cajera;
 	int idCarrito;
 	double montoTotal;
 public:
 	NodoCarrito() {
 		this->siguiente = NULL;
-		this->lista = NULL;
+		this->cajera = NULL;
 		this->idCarrito = 0;
 		this->montoTotal = 0.00;
 	}
-	NodoCarrito(ListaSimpleProductos* lista) {
-		this->lista = lista;
+	NodoCarrito(int idcarrito) {
+		this->idCarrito = idcarrito;
 		this->siguiente = NULL;
-		this->idCarrito = 0;
+		this->cajera = NULL;
 		this->montoTotal = 0.00;
-	}
-	void setMonto(double monto) {
-		this->montoTotal = monto;
 	}
 	double getMonto() {
-		return montoTotal;
+		return this->montoTotal;
 	}
 	void setIdCarrito(int id) {
 		this->idCarrito = id;
 	}
-	double getIdCarrito() {
-		return idCarrito;
+	int getIdCarrito() {
+		return this->idCarrito;
 	}
 	void setSiguiente(NodoCarrito* nodocarrito) {
 		this->siguiente = nodocarrito;
 	}
 	NodoCarrito* getSiguiente() {
-		return siguiente;
+		return this->siguiente;
+	}
+	NodoCarrito* getCarrito(){
+		return this->carrito;
 	}
 	double calcMontoCarrito(double precioProducto1, double precioProducto2) {
 		montoTotal = precioProducto1 + precioProducto2;

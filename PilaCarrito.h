@@ -54,7 +54,7 @@ public:
 			cout << "Cabeza->";
 			aux = cabeza;
 			while (aux != NULL) {
-				cout << aux->getSiguiente()->getIdCarrito() <<"->";
+				cout << aux->get"->";
 				aux = aux->getSiguiente();
 			}
 			cout << "NULL" << endl;

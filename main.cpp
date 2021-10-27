@@ -44,9 +44,7 @@ int main(int argc, char* argv[]) {
 			cin >> nombre;
 			cout << "Digite el id de la cajera" << endl;
 			cin >> id;
-			cajera = new Cajera();
-			cajera->setNombreCajera(nombre);
-			cajera->setIdCajera(id);
+			cajera = new Cajera(nombre, id);
 			nodocajera = new NodoCajera(cajera);
 			cola->poner(nodocajera);
 			break;
@@ -55,17 +53,15 @@ int main(int argc, char* argv[]) {
 			cola->imprimir();
 			break;
 		case 3:
-			nodocarrito = new NodoCarrito();
 			cout << "======================== Registro de carritos========================" << endl
 				<< "\nDigite el id del carrito a registrar" << endl;
 			cin >> id;
+			nodocarrito = new NodoCarrito();
 			nodocarrito->setIdCarrito(id);
 			pila->apilar(nodocarrito);
 			pila->imprimirTodosCarritos();
 			break;
-		case 4:
-			break;
-
+		
 		case 5:
 			break;
 		}
