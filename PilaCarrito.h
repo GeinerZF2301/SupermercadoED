@@ -54,7 +54,7 @@ public:
 			cout << "Cabeza->";
 			aux = cabeza;
 			while (aux != NULL) {
-				cout << aux->get"->";
+				cout << "Hola";
 				aux = aux->getSiguiente();
 			}
 			cout << "NULL" << endl;
