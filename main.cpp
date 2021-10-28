@@ -117,7 +117,11 @@ int main(int argc, char* argv[]) {
 		case 7:
 			system("cls");
 			pila->imprimirCarritosconProducto();
+		case 8:
+			cout << "HOLA";
+			break;
 		}
+
 		cout << "\n\t\t\t\t\tDigite 0 para salir" << endl;
 		cin >> opcDow;
 	} while (opcDow != 0);
