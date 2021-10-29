@@ -18,7 +18,7 @@ public:
 		return this->cabeza;
 	}
 	bool esVacia() {
-		return cabeza == NULL;
+		cabeza == NULL;
 	}
 	void insertarInicio(NodoProducto* nodoproducto) {
 		if (esVacia()) {
@@ -83,7 +83,7 @@ public:
 	}
 	NodoProducto* buscarProducto(string nombreproducto) {
 		NodoProducto* aux, * nodo = NULL;
-		if (!esVacia()) {
+		if (esVacia()) {
 			aux = cabeza;
 			while (aux != NULL) {
 				if (aux->getProducto()->getnombreProducto() == nombreproducto){
