@@ -40,7 +40,7 @@ int main(int argc, char* argv[]) {
 			<< "\t\t\tGeiner Zuñiga - Melany Lawson - Kriscia Campos - Maria del Mar Acón " << endl
 			<< "\t\t\t----------------------------------------------------------------" << endl
 			<< "\n\t\t\tMenú de opciones" << endl
-			<< "\n\t\t\t1) Registrar una cajera" << endl
+			<< "\n\t\t1) Registrar una cajera" << endl
 			<< "\t\t\t2) Imprimir una lista de cajeras" << endl
 			<< "\t\t\t3) Registrar un carrito" << endl
 			<< "\t\t\t4) Registrar un carrito a una cajera" << endl
@@ -184,3 +184,4 @@ int main(int argc, char* argv[]) {
 	} while (opcDow != 0);
 	return 0;
 };
+

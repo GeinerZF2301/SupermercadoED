@@ -23,7 +23,6 @@
     <ClInclude Include="Carrito.h" />
     <ClInclude Include="ColaCajera.h" />
     <ClInclude Include="ListaSimpleProductos.h" />
-    <ClInclude Include="main.h" />
     <ClInclude Include="NodoCajera.h" />
     <ClInclude Include="NodoCarrito.h" />
     <ClInclude Include="NodoProducto.h" />
