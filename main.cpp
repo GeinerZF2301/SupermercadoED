@@ -106,7 +106,7 @@ int main(int argc, char* argv[]) {
 				<< "------------------------------------------------- " << endl
 				<< "Ingrese el nombre del producto que desea guardar: " << endl;
 			cin >> nombreProducto;
-			nodoproducto = lista->buscarProducto(nombreProducto);
+			//nodoproducto = lista->buscarProducto(nombreProducto);
 			if (nodoproducto != NULL) {
 				cout << "Ya existe un producto con ese nombre. " << endl;
 			}
