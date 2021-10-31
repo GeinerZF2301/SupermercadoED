@@ -11,6 +11,8 @@ using namespace std;
 #include"NodoCajera.h"
 #include"ColaCajera.h"
 
+
+
 int main(int argc, char* argv[]) {
 	setlocale(LC_CTYPE, "Spanish");
 	Cajera* cajera;
@@ -19,6 +21,7 @@ int main(int argc, char* argv[]) {
 	NodoProducto* nodoproducto;
 	NodoCarrito* nodocarrito;
 	Carrito* carrito;
+	PilaCarrito* pilacarrito;
 	ColaCajera* cola = new ColaCajera();
 	PilaCarrito* pila = new PilaCarrito();
 	ListaSimpleProductos* lista = new ListaSimpleProductos();
@@ -40,10 +43,11 @@ int main(int argc, char* argv[]) {
 			<< "\n\t\t\t1) Registrar una cajera" << endl
 			<< "\t\t\t2) Imprimir una lista de cajeras" << endl
 			<< "\t\t\t3) Registrar un carrito" << endl
-			<< "\t\t\t4) Imprimir una lista de carritos" << endl
-			<< "\t\t\t5) Registrar un nuevo producto" << endl
-			<< "\t\t\t6) Registrar un producto a un carrito" << endl
-			<< "\t\t\t7) Imprimir carritos con productos asignados" << endl
+			<< "\t\t\t4) Registrar un carrito a una cajera" << endl
+			<< "\t\t\t5) Imprimir una lista de carritos" << endl
+			<< "\t\t\t6) Registrar un nuevo producto" << endl
+			<< "\t\t\t7) Registrar un producto a un carrito" << endl
+			<< "\t\t\t8) Imprimir carritos con productos asignados" << endl
 			<< "\t\t\t0) Salir" << endl
 			<< "\t\t\t---------------------------------------------------------" << endl
 			<< "\t\t\t           Digite la opción que desea : ";
@@ -91,6 +95,28 @@ int main(int argc, char* argv[]) {
 
 		case 4:
 			system("cls");
+		
+			cout << "------------------------------------------------- " << endl
+				<< "            Registro de Carrito a Cajera:  " << endl
+				<< "------------------------------------------------- " << endl;
+			cout << "Ingrese el nombre de la cajera que desea asignar: " << endl;
+			cin >> nombreCajera;
+			cout << "Ingrese el id del carrito que desea asignar a la cajera: " << endl;
+			cin >> idCarrito;
+			nodocarrito = pila->buscarCarrito(idCarrito);
+			if (nodocarrito == NULL) {
+				cout << "El carrito que desea ingresar no existe: " << endl;
+				system("pause");
+				break;
+			}
+			ColaCajera->agregarCarritoPorCajera(int idCajera, NodoCarrito);
+			ColaCajera->imprimirCajeraConCarritos();
+			system("pause");
+			break;
+		
+
+		case 5:
+			system("cls");
 			cout << "------------------------------------------------- " << endl
 				<< "                Lista de Carritos:  " << endl
 				<< "------------------------------------------------- " << endl;
@@ -98,8 +124,8 @@ int main(int argc, char* argv[]) {
 			nodocarrito->setSiguiente(nodocarrito);
 			pila->imprimirTodosCarritos();
 			break;
-		case 5:
-			system("cls");
+
+		case 6:			system("cls");
 			cout << "------------------------------------------------- " << endl
 				<< "           Registro de Productos:  " << endl
 				<< "------------------------------------------------- " << endl
@@ -121,7 +147,7 @@ int main(int argc, char* argv[]) {
 			system("pause");
 			
 			break;
-		case 6:
+		case 7:
 			system("cls");
 			cout << "------------------------------------------------- " << endl
 				<< "           Registro de Productos a un Carrito:  " << endl
@@ -140,15 +166,17 @@ int main(int argc, char* argv[]) {
 			}
 			break;
 
-		case 7:
+		case 8:
 			system("cls");
 			pila->imprimirCarritosconProducto();
 		}
-		cout << "\n\t\t\t\t\tDigite 0 para salir" << endl;
 
-		case 6:
+		cout << "\n\t\t\t\t\tDigite 1 para continuar en el menu " << endl
+			<< "\n\t\t\t\t\tDigite 0 para salir del menu" << endl;
 
-			cout << "Hola COMO ESTASSSSSSSSSSS";
+	/*	case 6:
+
+			cout << "Hola COMO ESTASSSSSSSSSSS";*/
 		cin >> opcDow;
 
 		 

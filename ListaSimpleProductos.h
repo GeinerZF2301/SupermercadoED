@@ -18,7 +18,7 @@ public:
 		return this->cabeza;
 	}
 	bool esVacia() {
-		cabeza == NULL;
+		return cabeza == NULL;
 	}
 	void insertarInicio(NodoProducto* nodoproducto) {
 		if (esVacia()) {
