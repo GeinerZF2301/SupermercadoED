@@ -83,7 +83,7 @@ public:
 	}
 	NodoProducto* buscarProducto(string nombreproducto) {
 		NodoProducto* aux, * nodo = NULL;
-		if (!esVacia()) {
+		if (esVacia()) {
 			aux = cabeza;
 			while (aux != NULL) {
 				if (aux->getProducto()->getnombreProducto() == nombreproducto){
