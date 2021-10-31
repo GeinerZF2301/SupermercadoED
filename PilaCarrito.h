@@ -65,21 +65,19 @@ public:
 		}
 	}
 	
-	bool buscarCarrito(int id) {
-		NodoCarrito* aux;
+	NodoCarrito* buscarCarrito(int id) {
+		NodoCarrito* aux, *nodo = NULL;
 		if (!esVacia()) {
 			aux = getCabeza();
+			bool existe = false;
 			while (aux != NULL) {
-				if (aux->getCarrito()->getIdCarrito() != id) {
-					aux = aux->getSiguiente();
-				}else{															//Si existe el carrito en la pila
-					cout << "Carrito Encontrado!: " << endl;
-					return true;
+				if (aux->getCarrito()->getIdCarrito() == id) {
+					nodo = aux;
 				}
+				aux = aux->getSiguiente();
 			}
-			cout << "Carrito no encontrado!" << endl;
-			return false;
 		}
+		return nodo;
 	}
 
 
@@ -105,7 +103,7 @@ public:
 	}
 	
 	//Metodo para verificar si existe un carrito antes de agregarlo
-	bool existeProducto(int idCarrito,NodoProducto* nodoproducto) {
+	bool existeCarrito(int idCarrito,NodoProducto* nodoproducto) {
 		NodoCarrito* aux;
 		if (!esVacia()) {
 			string nombreproducto = nodoproducto->getProducto()->getnombreProducto();
@@ -129,7 +127,7 @@ public:
 			while (aux != NULL) {
 				if (aux->getCarrito()->getIdCarrito() == id) {
 					existe = true;
-					if (this->existeProducto(id, nodoproducto) == false) {
+					if (this->existeCarrito(id, nodoproducto) == false) {
 						aux->getListaproductos()->insertarInicio(nodoproducto);
 						cout << "Producto agregado exitosamente! " << endl;
 					}else {

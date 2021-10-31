@@ -131,11 +131,11 @@ int main(int argc, char* argv[]) {
 			cout << "Ingrese el nombre del producto que desea asignar: " << endl;
 			cin >> nombreProducto;
 			nodoproducto = lista->buscarProducto(nombreProducto);
-			if (nodoproducto == NULL) {
+			if (nodoproducto != NULL) {
 				cout << "El producto que desea ingresar no está disponible en el supermercado!: " << endl;
 				break;
 			}else {
-				if(pila->buscarCarrito(idCarrito) == true)
+				if( nodoproducto = pila->buscarCarrito(idCarrito))
 				pila->agregarProductosCarrito(idCarrito, nodoproducto);
 			}
 			break;
