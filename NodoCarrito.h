@@ -5,10 +5,12 @@
 using namespace std;
 #include"Producto.h"
 #include"Carrito.h"
+#include"ListaSimpleProductos.h"
 class NodoCarrito {
 private:
 	NodoCarrito* siguiente;
 	Carrito* carrito;
+	ListaSimpleProductos* listaProductos;
 public:
 	NodoCarrito() {
 		this->siguiente = NULL;
@@ -23,6 +25,9 @@ public:
 	}
 	NodoCarrito* getSiguiente() {
 		return this->siguiente;
+	}
+	ListaSimpleProductos* getListaproductos() {
+		return this->listaProductos;
 	}
 	Carrito *getCarrito() {
 		return this->carrito;

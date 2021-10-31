@@ -79,42 +79,82 @@ public:
 		}
 		return false;
 	}*/
-	void imprimirProductosCarrito() {
+	void imprimirCarritosconProducto() {
 		NodoCarrito* aux;
-		Producto* aux1;
-		if (!esVacia()) {
-			cout << "Cabeza->";
-			aux = cabeza;
-			while (aux != NULL) {
-				cout << aux->getSiguiente()<< "->";
-				cout << aux1->toString();
-				
-				aux = aux->getSiguiente();
-			}
-			if (aux == NULL) {
-				cout << "El carrito no fue encontrado!" << endl;
-			}
-		}
-	}
-
-	/*void agregarProductos(int id, NodoProducto* nodo) { //
-		NodoProducto* aux;
+		bool tieneProductos = false;
 		if (!esVacia()) {
 			aux = getCabeza();
-			while (aux != NULL && aux->getProducto()->getIdProducto() != id) {
+			cout << endl << "PILA DE CARRITOS CON PRODUCTOS" << endl;
+			while (aux != NULL) {
+				if (aux->getListaproductos()->getContador() != 0) {
+					cout << endl << "\tCarrito " << aux->getCarrito()->getIdCarrito() << endl << endl;
+					aux->getListaproductos()->imprimir();
+					tieneProductos = true;
+				}
 				aux = aux->getSiguiente();
 			}
-			if (aux != NULL) { //Si existe
-				aux->getListaMedicamento()->insertarFinal(nodo);
-				cout << "Medicamento agregado a " << aux->getPaciente()->getNombre() << endl;
+			if (tieneProductos == false) {
+				cout << "No hay carritos con Productos." << endl;
 			}
-			else {
-				cout << "Paciente no encontrado " << id << endl;
+
+		}
+	}
+	NodoCarrito* buscarCarrito(int Id) {
+		NodoCarrito* aux, * nodo = NULL;
+		if (!esVacia()) {
+			aux = cabeza;
+			while (aux != NULL) {
+				if (aux->getCarrito()->getIdCarrito() == Id) {
+					nodo = aux;
+				}
+				aux = aux->getSiguiente();
+			}
+		}
+		return nodo;
+	}
+	
+	//Metodo para verificar si existe un carrito antes de agregarlo
+	bool existeProducto(int idCarrito, NodoProducto* nodoproducto) {
+		NodoCarrito* aux;
+		if (!esVacia()) {
+			string nombreproducto = nodoproducto->getProducto()->getnombreProducto();
+			aux = getCabeza();
+			while (aux != NULL) {
+				if (aux->getCarrito()->getIdCarrito() == idCarrito) {
+					if (aux->getListaproductos()->buscarProducto(nombreproducto) != NULL) {
+						return true;
+					}
+				}
+				aux = aux->getSiguiente();
 			}
 		}
 	}
-	*/
-
+	void agregarProductosCarrito(int id, NodoProducto* nodoproducto) {
+		NodoCarrito* aux;
+		if (!esVacia()) {
+			bool existe = false;
+			aux = getCabeza();
+			while (aux != NULL) {
+				if (aux->getCarrito()->getIdCarrito() == id) {
+					existe = true;
+					if (this->existeProducto(id, nodoproducto) == false) {
+						aux->getListaproductos()->insertarInicio(nodoproducto);
+						cout << "Producto agregado exitosamente! " << endl;
+					}else {
+						cout << "Este producto ya fue agregado anteriormente a este carrito " << id << endl;
+					}
+				}
+				
+			}
+		if(existe==false) {
+			cout << "El carrito al que desea agregar los productos no existe" << endl;
+		}
+		
+		}else {
+			cout << "Pila de carrito vacia" << endl;
+		}
+	}
+	
 };
 #endif
 
