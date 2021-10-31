@@ -143,9 +143,9 @@ int main(int argc, char* argv[]) {
 
 		case 7:
 			system("cls");
-			cout << "------------------------------------------------ " << endl
-				<< "                    Supermercado                  " << endl
-				<< "------------------------------------------------- " << endl;
+			cout <<"*********************************************************** " << endl
+			     <<" \t\t\tSupermercado                     " << endl
+				 << "***********************************************************" << endl;
 			nodocarrito = new NodoCarrito();
 			nodocajera = new NodoCajera();
 			nodoproducto = new NodoProducto();
@@ -154,13 +154,13 @@ int main(int argc, char* argv[]) {
 			nodoproducto->setSiguiente(nodoproducto);
 		
 			cout << "\t\t\tLISTA DE CAJERAS" << endl;
-			cout << "------------------------------------------------" << endl;
+			cout << "----------------------------------------------------------" << endl;
 			 cola->imprimir(); 
 			cout << "\t\t\tLISTA DE CARRITOS" << endl;
-			cout << "------------------------------------------------" << endl;
+			cout << "----------------------------------------------------------" << endl;
 			 pila->imprimirTodosCarritos();
 			cout << "\t\t\tLISTA DE PRODUCTOS" << endl;
-			cout << "------------------------------------------------" << endl;
+			cout << "----------------------------------------------------------" << endl;
 			lista->imprimir();
 
 			break;
