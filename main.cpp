@@ -43,7 +43,8 @@ int main(int argc, char* argv[]) {
 			<< "\t\t\t4) Imprimir una lista de carritos" << endl
 			<< "\t\t\t5) Registrar un nuevo producto" << endl
 			<< "\t\t\t6) Registrar un producto a un carrito" << endl
-			<< "\t\t\t7) Imprimir carritos con productos asignados" << endl
+			<< "\t\t\t7) Imprimir lista de Cajeras,Carritos y sus productos" << endl
+			<< "\t\t\t8) Imprimir carritos con productos asignados" << endl
 			<< "\t\t\t0) Salir" << endl
 			<< "\t\t\t---------------------------------------------------------" << endl
 			<< "\t\t\t           Digite la opción que desea : ";
@@ -141,6 +142,29 @@ int main(int argc, char* argv[]) {
 			break;
 
 		case 7:
+			system("cls");
+			cout << "------------------------------------------------ " << endl
+				<< "                    Supermercado                  " << endl
+				<< "------------------------------------------------- " << endl;
+			nodocarrito = new NodoCarrito();
+			nodocajera = new NodoCajera();
+			nodoproducto = new NodoProducto();
+			nodocarrito->setSiguiente(nodocarrito);
+			nodocajera->setSiguiente(nodocajera);
+			nodoproducto->setSiguiente(nodoproducto);
+		
+			cout << "\t\t\tLISTA DE CAJERAS" << endl;
+			cout << "------------------------------------------------" << endl;
+			 cola->imprimir(); 
+			cout << "\t\t\tLISTA DE CARRITOS" << endl;
+			cout << "------------------------------------------------" << endl;
+			 pila->imprimirTodosCarritos();
+			cout << "\t\t\tLISTA DE PRODUCTOS" << endl;
+			cout << "------------------------------------------------" << endl;
+			lista->imprimir();
+
+			break;
+		case 8:
 			system("cls");
 			pila->imprimirCarritosconProducto();
 		}
