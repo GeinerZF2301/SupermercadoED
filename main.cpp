@@ -65,15 +65,15 @@ int main(int argc, char* argv[]) {
 			system("cls");
 			cout << "------------------------------------------------- " << endl
 				<< "                Registro de Cajeras:  " << endl
-				 << "------------------------------------------------- " << endl
-				 << "\nDigite el nombre de la cajera a registrar" << endl;
+				<< "------------------------------------------------- " << endl
+				<< "\nDigite el nombre de la cajera a registrar" << endl;
 			cin >> nombreCajera;
 			cout << "\nDigite el id de la cajera" << endl;
 			cin >> id;
 			cajera = new Cajera(nombreCajera, id);
 			nodocajera = new NodoCajera(cajera);
 			cola->poner(nodocajera);
-			cout << "\n\nCajera ["<<nombreCajera<<"] agregada correctamente! " << endl;
+			cout << "\n\nCajera [" << nombreCajera << "] agregada correctamente! " << endl;
 			break;
 		case 2:
 			system("cls");
@@ -82,7 +82,7 @@ int main(int argc, char* argv[]) {
 				<< "------------------------------------------------- " << endl;
 			cola->imprimir();
 			system("pause");
-			
+
 			break;
 		case 3:
 			system("cls");
@@ -96,7 +96,7 @@ int main(int argc, char* argv[]) {
 			carrito->setIdCarrito(id);
 			nodocarrito = new NodoCarrito(carrito);
 			pila->apilar(nodocarrito);
-			
+
 			break;
 
 		case 4:
@@ -151,7 +151,7 @@ int main(int argc, char* argv[]) {
 				lista->imprimir();
 			}
 			system("pause");
-			
+
 			break;
 		case 7:
 			system("cls");
@@ -166,39 +166,52 @@ int main(int argc, char* argv[]) {
 			if (nodoproducto != NULL) {
 				cout << "El producto que desea ingresar no está disponible en el supermercado!: " << endl;
 				break;
+<<<<<<< HEAD
 			}else {
 				if( nodoproducto = pila->buscarCarrito(idCarrito))
 				pila->agregarProductosCarrito(idCarrito, nodoproducto);
+=======
+			}
+			else {
+				if (pila->buscarCarrito(idCarrito) == true)
+					pila->agregarProductosCarrito(idCarrito, nodoproducto);
+>>>>>>> b634283bd78c1f60c60fdb49b7f8b03b00bbb7e2
 			}
 			break;
 
 		case 8:
 			system("cls");
-			cout << "------------------------------------------------ " << endl
-				<< "                    Supermercado                  " << endl
-				<< "------------------------------------------------- " << endl;
+			cout << "*********************************************************** " << endl
+				<< " \t\t\tSupermercado                     " << endl
+				<< "***********************************************************" << endl;
 			nodocarrito = new NodoCarrito();
 			nodocajera = new NodoCajera();
 			nodoproducto = new NodoProducto();
 			nodocarrito->setSiguiente(nodocarrito);
 			nodocajera->setSiguiente(nodocajera);
 			nodoproducto->setSiguiente(nodoproducto);
-		
+
 			cout << "\t\t\tLISTA DE CAJERAS" << endl;
-			cout << "------------------------------------------------" << endl;
-			 cola->imprimir(); 
+			cout << "----------------------------------------------------------" << endl;
+			cola->imprimir();
 			cout << "\t\t\tLISTA DE CARRITOS" << endl;
-			cout << "------------------------------------------------" << endl;
-			 pila->imprimirTodosCarritos();
+			cout << "----------------------------------------------------------" << endl;
+			pila->imprimirTodosCarritos();
 			cout << "\t\t\tLISTA DE PRODUCTOS" << endl;
-			cout << "------------------------------------------------" << endl;
+			cout << "----------------------------------------------------------" << endl;
 			lista->imprimir();
 
 			break;
 		case 9:
 			system("cls");
 			pila->imprimirCarritosconProducto();
+			break;
+		case 9:
+			system("cls");
+		break;
+			
 		}
+<<<<<<< HEAD
 
 		cout << "\n\t\t\t\t\tDigite 1 para continuar en el menu " << endl
 			<< "\n\t\t\t\t\tDigite 0 para salir del menu" << endl;
@@ -211,3 +224,12 @@ int main(int argc, char* argv[]) {
 	return 0;
 };
 
+=======
+		cout << "\n\t\t\t\t\tDigite: " << endl
+			<< " \n\t\t\t\t\t1 para volver al menu || 0 para  salir" << endl;
+			cin >> opcDow;
+
+	} while (opcDow != 0);
+	return 0;
+} ;
+>>>>>>> b634283bd78c1f60c60fdb49b7f8b03b00bbb7e2
