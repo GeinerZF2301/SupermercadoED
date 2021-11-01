@@ -166,16 +166,15 @@ int main(int argc, char* argv[]) {
 			if (nodoproducto != NULL) {
 				cout << "El producto que desea ingresar no está disponible en el supermercado!: " << endl;
 				break;
-<<<<<<< HEAD
+
 			}else {
 				if( nodoproducto = pila->buscarCarrito(idCarrito))
 				pila->agregarProductosCarrito(idCarrito, nodoproducto);
-=======
+
 			}
 			else {
 				if (pila->buscarCarrito(idCarrito) == true)
 					pila->agregarProductosCarrito(idCarrito, nodoproducto);
->>>>>>> b634283bd78c1f60c60fdb49b7f8b03b00bbb7e2
 			}
 			break;
 
@@ -211,7 +210,7 @@ int main(int argc, char* argv[]) {
 		break;
 			
 		}
-<<<<<<< HEAD
+
 
 		cout << "\n\t\t\t\t\tDigite 1 para continuar en el menu " << endl
 			<< "\n\t\t\t\t\tDigite 0 para salir del menu" << endl;
@@ -224,7 +223,7 @@ int main(int argc, char* argv[]) {
 	return 0;
 };
 
-=======
+
 		cout << "\n\t\t\t\t\tDigite: " << endl
 			<< " \n\t\t\t\t\t1 para volver al menu || 0 para  salir" << endl;
 			cin >> opcDow;
@@ -232,4 +231,4 @@ int main(int argc, char* argv[]) {
 	} while (opcDow != 0);
 	return 0;
 } ;
->>>>>>> b634283bd78c1f60c60fdb49b7f8b03b00bbb7e2
+

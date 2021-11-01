@@ -100,5 +100,5 @@ public:
 			cout << "La lista de cajeras está vacia." << endl;
 		}
 	}
-};
+}
 #endif

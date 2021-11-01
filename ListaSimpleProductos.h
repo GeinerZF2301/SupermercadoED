@@ -96,5 +96,5 @@ public:
 
 	}
 	
-};
+}
 #endif
