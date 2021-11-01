@@ -168,7 +168,10 @@ int main(int argc, char* argv[]) {
 		case 8:
 			system("cls");
 			pila->imprimirCarritosconProducto();
-
+			break;
+		case 9:
+			system("cls");
+		break;
 			
 		}
 		cout << "\n\t\t\t\t\tDigite: " << endl
