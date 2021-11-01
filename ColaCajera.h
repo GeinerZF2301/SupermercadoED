@@ -5,6 +5,8 @@
 
 #include"Cajera.h"
 #include "NodoCajera.h"
+#include "ListaSimpleProductos.h"
+#include "PilaCarrito.h"
 
 using namespace std;
 
@@ -73,30 +75,30 @@ public:
 	}
 
 	void agregarCarritoPorCajera(string NombreCajera, NodoCarrito* nodo) {
-			NodoCajera* aux;
-			if (!esVacia()) {
-				bool existe = false;
-				aux = getCabeza();
-				while (aux != NULL) {
-					if (aux->getCajera()->getNombre() == Nombre) {
-						existe = true;
-						if (this->existeCarrito(Nombre, nodoCarrito) == false) {
-							aux->getPilaCarrito()->apilar(nodoCarrito);
-							cout << "Carrito exitosamente asignado a esta cajera." << endl;
-						}
-						else {
-							cout << "Este carrito ya fue asignado a esta cajera." << endl;
-						}
+		NodoCajera* aux;
+		if (!esVacia()) {
+			bool existe = false;
+			aux = getCabeza();
+			while (aux != NULL) {
+				if (aux->getCajera()->getNombre() == Nombre) {
+					existe = true;
+					if (this->existeCarrito(Nombre, nodoCarrito) == false) {
+						aux->getPilaCarrito()->apilar(nodoCarrito);
+						cout << "Carrito exitosamente asignado a esta cajera." << endl;
 					}
-					aux = aux->getSiguiente();
+					else {
+						cout << "Este carrito ya fue asignado a esta cajera." << endl;
+					}
 				}
-				if (existe == false) {
-					cout << "La Cajera no existe." << endl;
-				}
+				aux = aux->getSiguiente();
 			}
-			else {
-				cout << "La lista de cajeras está vacia." << endl;
+			if (existe == false) {
+				cout << "La Cajera no existe." << endl;
 			}
-
+		}
+		else {
+			cout << "La lista de cajeras está vacia." << endl;
+		}
+	}
 };
 #endif
